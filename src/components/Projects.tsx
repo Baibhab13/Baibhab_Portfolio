@@ -9,32 +9,32 @@ import { ArrowRight } from 'lucide-react';
  * and links to live demos or repositories.
  */
 const Projects = () => {
-  // Array of projects for easy modification
+  // Array of projects for easy modification - updated from resume
   const projects = [
     {
       id: 1,
-      title: "E-commerce Website",
-      description: "A fully responsive e-commerce platform with shopping cart, payment integration, and user authentication.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Farm 2 You",
+      description: "Developed an Android app using Jetpack Compose and Android Studio for SIII. The app connects farmers directly with markets, eliminating intermediaries. Features include an intuitive UI, smooth navigation, and an AI assistant for informed decision-making.",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+      tags: ["Android", "Jetpack Compose", "AI", "Kotlin"],
       demoLink: "#",
       codeLink: "#",
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A simple yet powerful task management application with drag-and-drop functionality and real-time updates.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Firebase", "Tailwind CSS", "DnD"],
+      title: "FarmConnect",
+      description: "Created for the Project Innovation Contest ICDCIT 2025, this app enables secure transactions and contract farming. Built with Jetpack Compose and Android Studio, it provides fraud protection and an AI assistant.",
+      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?auto=format&fit=crop&w=800&q=80",
+      tags: ["Android", "Jetpack Compose", "AI", "Security"],
       demoLink: "#",
       codeLink: "#",
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description: "A modern portfolio website for showcasing projects and skills with dark/light mode toggle.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Tailwind CSS", "Framer Motion"],
+      title: "Laptop Price Prediction",
+      description: "Developed a user-friendly web app with Streamlit, allowing users to input laptop features and receive price predictions using an ML model trained on market data.",
+      image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80",
+      tags: ["Python", "Streamlit", "Machine Learning", "Data Analysis"],
       demoLink: "#",
       codeLink: "#",
     },

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
 
 /**
  * Hero section component
@@ -40,13 +40,45 @@ const Hero = () => {
           <div className="w-full md:w-7/12 lg:w-8/12 text-center md:text-left animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground mb-3 dark:text-gray-300">Hello, I'm</h2>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-4">Baibhab Sahu</h1>
-            <h3 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 dark:text-gray-300">Web Developer & Designer</h3>
+            <h3 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 dark:text-gray-300">Computer Science Engineering Student</h3>
             <p className="text-lg max-w-2xl mx-auto md:mx-0 mb-8">
-              I create beautiful and functional websites with clean code and user-centered design. 
-              Passionate about creating engaging digital experiences.
+              I'm a passionate developer experienced in Android app development and machine learning projects. 
+              Currently pursuing BTech in Computer Science at PMEC Berhampur.
             </p>
             
-            {/* Optional: Call to action button */}
+            {/* Social Links */}
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
+              <a 
+                href="mailto:baibhabsahu31@gmail.com"
+                className="p-3 bg-secondary rounded-full hover:bg-secondary/70 transition-colors dark:bg-gray-700 dark:hover:bg-gray-600"
+                aria-label="Email"
+                title="Email"
+              >
+                <Mail size={20} />
+              </a>
+              <a 
+                href="https://github.com/Baibhab13"
+                className="p-3 bg-secondary rounded-full hover:bg-secondary/70 transition-colors dark:bg-gray-700 dark:hover:bg-gray-600"
+                aria-label="GitHub"
+                title="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github size={20} />
+              </a>
+              <a 
+                href="https://linkedin.com/in/Baibhab07"
+                className="p-3 bg-secondary rounded-full hover:bg-secondary/70 transition-colors dark:bg-gray-700 dark:hover:bg-gray-600"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
+            
+            {/* Call to action button */}
             <button 
               className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
               onClick={() => {
