@@ -24,11 +24,11 @@ import Footer from '../components/Footer';
 const Index = () => {
   // Set page title when component mounts
   useEffect(() => {
-    document.title = "Your Name | Portfolio";
+    document.title = "Baibhab Sahu | Portfolio";
   }, []);
   
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen dark:bg-gray-900 dark:text-gray-100">
       <Navbar />
       <Hero />
       <About />
