@@ -13,17 +13,17 @@ const Contact = () => {
     {
       name: "Email",
       icon: <Mail size={20} />,
-      link: "mailto:your.email@example.com",
+      link: "mailto:baibhabsahu31@gmail.com",
     },
     {
       name: "GitHub",
       icon: <Github size={20} />,
-      link: "https://github.com/yourusername",
+      link: "https://github.com/Baibhab13",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin size={20} />,
-      link: "https://linkedin.com/in/yourusername",
+      link: "https://linkedin.com/in/Baibhab07",
     },
   ];
   
@@ -86,7 +86,7 @@ const Contact = () => {
             <h3 className="text-xl font-medium mb-6">Contact Information</h3>
             
             <p className="text-muted-foreground mb-8">
-              I'm currently available for freelance work or full-time positions. If you're interested in working together, please get in touch.
+              I'm currently a Computer Science Engineering Student at PMEC Berhampur. If you're interested in connecting, please get in touch.
             </p>
             
             <div className="space-y-6">
