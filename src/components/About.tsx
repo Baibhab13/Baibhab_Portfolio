@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, Briefcase, Book, Code, UserCheck } from 'lucide-react';
+import { User, Briefcase, Book, Code, UserCheck, FileCode, Globe, Figma, Server, Database, Cpu, ChevronRight } from 'lucide-react';
 
 /**
  * About section component
@@ -9,14 +9,31 @@ import { User, Briefcase, Book, Code, UserCheck } from 'lucide-react';
  * experience, and skills.
  */
 const About = () => {
-  // Skills array for easy modification - updated from resume
+  // Skills array with icons for easy modification
   const technicalSkills = [
-    "C", "Python", "Kotlin", "Java", "Figma", "MS Office", "HTML", "CSS", 
-    "React", "Scikit-learn", "Dagger-Hilt", "KSP", "Koin", "Firebase", "Room", "Seaborn"
+    { name: "C", icon: <FileCode size={16} /> },
+    { name: "Python", icon: <FileCode size={16} /> },
+    { name: "Kotlin", icon: <FileCode size={16} /> },
+    { name: "Java", icon: <FileCode size={16} /> },
+    { name: "Figma", icon: <Figma size={16} /> },
+    { name: "MS Office", icon: <FileCode size={16} /> },
+    { name: "HTML", icon: <Globe size={16} /> },
+    { name: "CSS", icon: <Globe size={16} /> },
+    { name: "React", icon: <Code size={16} /> },
+    { name: "Scikit-learn", icon: <Cpu size={16} /> },
+    { name: "Dagger-Hilt", icon: <Code size={16} /> },
+    { name: "KSP", icon: <Code size={16} /> },
+    { name: "Koin", icon: <Code size={16} /> },
+    { name: "Firebase", icon: <Server size={16} /> },
+    { name: "Room", icon: <Database size={16} /> },
+    { name: "Seaborn", icon: <Cpu size={16} /> }
   ];
   
   const softSkills = [
-    "Teamwork", "Leadership", "Problem Solving", "Decision Making"
+    { name: "Teamwork", icon: <UserCheck size={16} /> },
+    { name: "Leadership", icon: <UserCheck size={16} /> },
+    { name: "Problem Solving", icon: <ChevronRight size={16} /> },
+    { name: "Decision Making", icon: <ChevronRight size={16} /> }
   ];
   
   return (
@@ -138,10 +155,11 @@ const About = () => {
               {technicalSkills.map((skill, index) => (
                 <span 
                   key={index} 
-                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100"
+                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100 flex items-center gap-2"
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
-                  {skill}
+                  {skill.icon}
+                  {skill.name}
                 </span>
               ))}
             </div>
@@ -159,10 +177,11 @@ const About = () => {
               {softSkills.map((skill, index) => (
                 <span 
                   key={index} 
-                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100"
+                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100 flex items-center gap-2"
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
-                  {skill}
+                  {skill.icon}
+                  {skill.name}
                 </span>
               ))}
             </div>
