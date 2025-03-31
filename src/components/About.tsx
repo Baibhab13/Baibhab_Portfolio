@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, Briefcase, Book, Code, UserCheck, FileCode, Globe, Figma, Server, Database, Cpu, ChevronRight } from 'lucide-react';
+import { User, Briefcase, Book, Code, UserCheck, FileCode, Globe, Figma, Server, Database, Cpu, ChevronRight, Trophy, Award, Users } from 'lucide-react';
 
 /**
  * About section component
@@ -34,6 +34,34 @@ const About = () => {
     { name: "Leadership", icon: <UserCheck size={16} /> },
     { name: "Problem Solving", icon: <ChevronRight size={16} /> },
     { name: "Decision Making", icon: <ChevronRight size={16} /> }
+  ];
+
+  // Achievements array
+  const achievements = [
+    "Secured 3rd Prize at NIT Rourkela INNOVISION 2024 IMAGINE AI Hackathon, demonstrating AI innovation and teamwork.",
+    "Won 1st Prize in the Internal Smart India Hackathon held at PMEC.",
+    "Secured 2nd Prize at ML DL Workshop.",
+    "Participated in the 14th Project Innovation Contest (ICDCIT–2025), showcasing technical expertise."
+  ];
+
+  // Positions of Responsibility array
+  const responsibilities = [
+    {
+      position: "Secretary",
+      description: "Led and coordinated club activities, managed communications, and oversaw event planning, driving member engagement."
+    },
+    {
+      position: "Organizer, CodeKriti 3.0",
+      description: "Managed the overall planning and execution of the college's flagship techfest."
+    },
+    {
+      position: "Organizer, DevXtreme Hackathon",
+      description: "Brought alumni mentors to guide students in full-stack development."
+    },
+    {
+      position: "Technical Coordinator, ICORSVB 2025",
+      description: "Handled all technical aspects of the international conference held at PMEC."
+    }
   ];
   
   return (
@@ -141,10 +169,49 @@ const About = () => {
           </div>
         </div>
         
+        {/* Achievements Section */}
+        <div className="mt-16 bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.7s' }}>
+          <div className="flex items-center mb-6">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
+              <Trophy size={20} className="text-primary dark:text-gray-300" />
+            </div>
+            <h3 className="text-xl font-medium">Achievements</h3>
+          </div>
+          <ul className="space-y-3">
+            {achievements.map((achievement, index) => (
+              <li key={index} className="flex items-start gap-3 animate-fade-in" style={{ animationDelay: `${0.1 * index}s` }}>
+                <Award size={18} className="text-primary mt-1 flex-shrink-0 dark:text-gray-300" />
+                <span className="text-muted-foreground dark:text-gray-300">{achievement}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Positions of Responsibility Section */}
+        <div className="mt-10 bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.8s' }}>
+          <div className="flex items-center mb-6">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
+              <Users size={20} className="text-primary dark:text-gray-300" />
+            </div>
+            <h3 className="text-xl font-medium">Positions of Responsibility</h3>
+          </div>
+          <div className="space-y-4">
+            {responsibilities.map((responsibility, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.1 * index}s` }}>
+                <h4 className="font-medium flex items-center gap-2">
+                  <UserCheck size={16} className="text-primary dark:text-gray-300" />
+                  {responsibility.position}
+                </h4>
+                <p className="text-muted-foreground ml-6 mt-1 dark:text-gray-300">{responsibility.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
         {/* Skills */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Technical Skills */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.7s' }}>
+          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.9s' }}>
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
                 <Code size={20} className="text-primary dark:text-gray-300" />
@@ -166,7 +233,7 @@ const About = () => {
           </div>
           
           {/* Soft Skills */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.8s' }}>
+          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '1.0s' }}>
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
                 <UserCheck size={20} className="text-primary dark:text-gray-300" />
