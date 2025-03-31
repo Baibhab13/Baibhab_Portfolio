@@ -61,6 +61,10 @@ const About = () => {
     {
       position: "Technical Coordinator, ICORSVB 2025",
       description: "Handled all technical aspects of the international conference held at PMEC."
+    },
+    {
+      position: "Session Coordinator, ICMIB 2025",
+      description: "Coordinated session scheduling and management for the international conference."
     }
   ];
   
