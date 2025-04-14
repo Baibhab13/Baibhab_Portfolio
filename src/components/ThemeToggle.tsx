@@ -34,14 +34,15 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <Sun size={18} className={`${isDarkMode ? 'text-gray-500' : 'text-yellow-500'}`} />
+    <div className="flex items-center gap-2 glass-effect px-2 py-1 rounded-full">
+      <Sun size={18} className={`${isDarkMode ? 'text-gray-500' : 'text-yellow-500'} transition-all duration-300`} />
       <Switch 
         checked={isDarkMode} 
         onCheckedChange={toggleTheme} 
         aria-label="Toggle dark mode"
+        className="data-[state=checked]:bg-indigo-700 data-[state=unchecked]:bg-amber-400"
       />
-      <Moon size={18} className={`${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+      <Moon size={18} className={`${isDarkMode ? 'text-indigo-400' : 'text-gray-400'} transition-all duration-300`} />
     </div>
   );
 };

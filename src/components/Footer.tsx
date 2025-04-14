@@ -11,7 +11,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8 bg-gradient-to-r from-primary to-purple-600 text-primary-foreground dark:from-primary dark:to-purple-800">
+    <footer className="py-8 bg-gradient-to-r from-indigo-600 to-violet-600 text-primary-foreground dark:from-indigo-800 dark:to-violet-900">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">

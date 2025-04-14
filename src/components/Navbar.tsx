@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 /**
  * Navigation component with responsive mobile menu
@@ -53,7 +54,7 @@ const Navbar = () => {
           </a>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {['home', 'about', 'projects', 'contact'].map((item) => (
               <a
                 key={item}
@@ -67,16 +68,22 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            
+            {/* Theme Toggle */}
+            <ThemeToggle />
           </nav>
           
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-gray-500 hover:text-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
+            <button 
+              className="text-gray-500 hover:text-primary"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
       
