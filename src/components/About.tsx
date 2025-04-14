@@ -69,18 +69,18 @@ const About = () => {
   ];
   
   return (
-    <section id="about" className="py-20 bg-secondary/30 dark:bg-gray-800/50">
+    <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-purple-50 dark:from-gray-900 dark:to-purple-900/30">
       <div className="container mx-auto px-6">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title gradient-text mb-10">About Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-12">
           {/* Personal Info */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.2s' }}>
+          <div className="glass-card p-8 animate-scale-in delay-100" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-                <User size={20} className="text-primary dark:text-gray-300" />
+              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                <User size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-medium">Personal Info</h3>
+              <h3 className="text-xl font-medium gradient-text">Personal Info</h3>
             </div>
             
             <p className="text-muted-foreground mb-6 dark:text-gray-300">
@@ -89,19 +89,19 @@ const About = () => {
             </p>
             
             <div className="space-y-3">
-              <div className="flex justify-between">
+              <div className="flex justify-between backdrop-blur-sm bg-white/30 dark:bg-black/20 p-2 rounded-lg">
                 <span className="font-medium">Name:</span>
                 <span>Baibhab Sahu</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between backdrop-blur-sm bg-white/30 dark:bg-black/20 p-2 rounded-lg">
                 <span className="font-medium">Email:</span>
                 <span>baibhabsahu31@gmail.com</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between backdrop-blur-sm bg-white/30 dark:bg-black/20 p-2 rounded-lg">
                 <span className="font-medium">Location:</span>
                 <span>Berhampur, Odisha</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between backdrop-blur-sm bg-white/30 dark:bg-black/20 p-2 rounded-lg">
                 <span className="font-medium">GitHub:</span>
                 <span>Baibhab13</span>
               </div>
@@ -109,16 +109,16 @@ const About = () => {
           </div>
           
           {/* Education */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.4s' }}>
+          <div className="glass-card p-8 animate-scale-in delay-300" style={{ animationDelay: '0.4s' }}>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-                <Book size={20} className="text-primary dark:text-gray-300" />
+              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                <Book size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-medium">Education</h3>
+              <h3 className="text-xl font-medium gradient-text">Education</h3>
             </div>
             
             <div className="space-y-6">
-              <div>
+              <div className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-3 rounded-lg">
                 <div className="flex justify-between items-center mb-1">
                   <h4 className="font-medium">BTech in Computer Science</h4>
                   <span className="text-sm text-muted-foreground dark:text-gray-400">2022 - present</span>
@@ -127,7 +127,7 @@ const About = () => {
                 <p className="text-sm">CGPA: 8.7</p>
               </div>
               
-              <div>
+              <div className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-3 rounded-lg">
                 <div className="flex justify-between items-center mb-1">
                   <h4 className="font-medium">Senior Secondary (CBSE Class XII)</h4>
                   <span className="text-sm text-muted-foreground dark:text-gray-400">2018 - 2020</span>
@@ -136,7 +136,7 @@ const About = () => {
                 <p className="text-sm">Percentage: 90.8%</p>
               </div>
               
-              <div>
+              <div className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-3 rounded-lg">
                 <div className="flex justify-between items-center mb-1">
                   <h4 className="font-medium">Higher Secondary (CBSE Class X)</h4>
                   <span className="text-sm text-muted-foreground dark:text-gray-400">2018</span>
@@ -148,62 +148,64 @@ const About = () => {
           </div>
           
           {/* Experience */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.6s' }}>
+          <div className="glass-card p-8 animate-scale-in delay-500" style={{ animationDelay: '0.6s' }}>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-                <Briefcase size={20} className="text-primary dark:text-gray-300" />
+              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                <Briefcase size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-medium">Experience</h3>
+              <h3 className="text-xl font-medium gradient-text">Experience</h3>
             </div>
             
-            <div className="space-y-6">
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <h4 className="font-medium">Summer Intern</h4>
-                  <span className="text-sm text-muted-foreground dark:text-gray-400">June 2024 - July 2024</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-1 dark:text-gray-400">PMEC, Berhampur, Odisha</p>
-                <ul className="text-sm list-disc pl-5 space-y-1">
-                  <li>Developed 3 ML projects under professors' guidance.</li>
-                  <li>Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
-                  <li>Enhanced an LLM project, boosting performance by 20%.</li>
-                </ul>
+            <div className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-3 rounded-lg">
+              <div className="flex justify-between items-center mb-1">
+                <h4 className="font-medium">Summer Intern</h4>
+                <span className="text-sm text-muted-foreground dark:text-gray-400">June 2024 - July 2024</span>
               </div>
+              <p className="text-sm text-muted-foreground mb-1 dark:text-gray-400">PMEC, Berhampur, Odisha</p>
+              <ul className="text-sm list-disc pl-5 space-y-1">
+                <li>Developed 3 ML projects under professors' guidance.</li>
+                <li>Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
+                <li>Enhanced an LLM project, boosting performance by 20%.</li>
+              </ul>
             </div>
           </div>
         </div>
         
         {/* Achievements Section */}
-        <div className="mt-16 bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.7s' }}>
+        <div className="mt-16 glass-card p-8 animate-slide-in-right delay-200">
           <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-              <Trophy size={20} className="text-primary dark:text-gray-300" />
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-achievement-bg))] flex items-center justify-center mr-4">
+              <Trophy size={20} className="text-white" />
             </div>
-            <h3 className="text-xl font-medium">Achievements</h3>
+            <h3 className="text-xl font-medium gradient-achievement">Achievements</h3>
           </div>
-          <ul className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start gap-3 animate-fade-in" style={{ animationDelay: `${0.1 * index}s` }}>
-                <Award size={18} className="text-primary mt-1 flex-shrink-0 dark:text-gray-300" />
-                <span className="text-muted-foreground dark:text-gray-300">{achievement}</span>
-              </li>
+              <div key={index} className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-4 rounded-lg animate-bounce-in" 
+                style={{ animationDelay: `${0.3 + 0.1 * index}s` }}>
+                <div className="flex items-start gap-3">
+                  <Award size={18} className="text-[hsl(var(--about-achievement-bg))] mt-1 flex-shrink-0" />
+                  <span className="text-muted-foreground dark:text-gray-300">{achievement}</span>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
         
         {/* Positions of Responsibility Section */}
-        <div className="mt-10 bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.8s' }}>
+        <div className="mt-10 glass-card p-8 animate-slide-in-left delay-400">
           <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-              <Users size={20} className="text-primary dark:text-gray-300" />
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-responsibility-bg))] flex items-center justify-center mr-4">
+              <Users size={20} className="text-white" />
             </div>
-            <h3 className="text-xl font-medium">Positions of Responsibility</h3>
+            <h3 className="text-xl font-medium gradient-responsibility">Positions of Responsibility</h3>
           </div>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {responsibilities.map((responsibility, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.1 * index}s` }}>
+              <div key={index} className="backdrop-blur-sm bg-white/30 dark:bg-black/20 p-4 rounded-lg animate-bounce-in" 
+                style={{ animationDelay: `${0.5 + 0.1 * index}s` }}>
                 <h4 className="font-medium flex items-center gap-2">
-                  <UserCheck size={16} className="text-primary dark:text-gray-300" />
+                  <UserCheck size={16} className="text-[hsl(var(--about-responsibility-bg))]" />
                   {responsibility.position}
                 </h4>
                 <p className="text-muted-foreground ml-6 mt-1 dark:text-gray-300">{responsibility.description}</p>
@@ -215,19 +217,19 @@ const About = () => {
         {/* Skills */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Technical Skills */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '0.9s' }}>
+          <div className="glass-card p-8 animate-slide-in-right delay-600">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-                <Code size={20} className="text-primary dark:text-gray-300" />
+              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                <Code size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-medium">Technical Skills</h3>
+              <h3 className="text-xl font-medium gradient-text">Technical Skills</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {technicalSkills.map((skill, index) => (
                 <span 
                   key={index} 
-                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100 flex items-center gap-2"
-                  style={{ animationDelay: `${0.1 * index}s` }}
+                  className="px-4 py-2 backdrop-blur-sm bg-white/40 dark:bg-black/30 rounded-full shadow-sm text-sm animate-bounce-in flex items-center gap-2"
+                  style={{ animationDelay: `${0.7 + 0.05 * index}s` }}
                 >
                   {skill.icon}
                   {skill.name}
@@ -237,19 +239,19 @@ const About = () => {
           </div>
           
           {/* Soft Skills */}
-          <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in dark:bg-gray-900" style={{ animationDelay: '1.0s' }}>
+          <div className="glass-card p-8 animate-slide-in-left delay-700">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 dark:bg-gray-700">
-                <UserCheck size={20} className="text-primary dark:text-gray-300" />
+              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                <UserCheck size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-medium">Soft Skills</h3>
+              <h3 className="text-xl font-medium gradient-text">Soft Skills</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {softSkills.map((skill, index) => (
                 <span 
                   key={index} 
-                  className="px-4 py-2 bg-secondary rounded-full shadow-sm text-sm animate-fade-in dark:bg-gray-800 dark:text-gray-100 flex items-center gap-2"
-                  style={{ animationDelay: `${0.1 * index}s` }}
+                  className="px-4 py-2 backdrop-blur-sm bg-white/40 dark:bg-black/30 rounded-full shadow-sm text-sm animate-bounce-in flex items-center gap-2"
+                  style={{ animationDelay: `${0.9 + 0.1 * index}s` }}
                 >
                   {skill.icon}
                   {skill.name}
