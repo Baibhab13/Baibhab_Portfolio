@@ -1,6 +1,10 @@
 
 import React from 'react';
 import { User, Briefcase, Book, Code, UserCheck, FileCode, Globe, Figma, Server, Database, Cpu, ChevronRight, Trophy, Award, Users } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 /**
  * About section component
@@ -69,193 +73,211 @@ const About = () => {
   ];
   
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-blue-50/50 to-purple-50/50 backdrop-blur-sm dark:from-gray-900/50 dark:to-purple-900/30">
+    <section id="about" className="py-20 bg-gradient-to-b from-teal-50/80 to-indigo-50/80 dark:from-gray-900/80 dark:to-indigo-950/80">
       <div className="container mx-auto px-6">
-        <h2 className="section-title gradient-text mb-10">About Me</h2>
+        <h2 className="text-4xl font-serif font-medium mb-10 text-center">
+          <span className="gradient-text">About Me</span>
+        </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-12">
-          {/* Personal Info - Enhanced with better alignment */}
-          <div className="glass-card p-8 animate-scale-in delay-100" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <User size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Personal Info</h3>
-            </div>
+        {/* Main grid layout with new arrangement */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Personal Info - Taking up 4 columns */}
+          <div className="lg:col-span-4 space-y-6">
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                    <User size={20} className="text-primary-foreground" />
+                  </div>
+                  <CardTitle className="gradient-text">Personal Info</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4 pt-4">
+                <div className="personal-info-grid">
+                  <div className="info-label">Name:</div>
+                  <div className="info-value">Baibhab Sahu</div>
+                  
+                  <div className="info-label">Email:</div>
+                  <div className="info-value">baibhabsahu31@gmail.com</div>
+                  
+                  <div className="info-label">Location:</div>
+                  <div className="info-value">Berhampur, Odisha</div>
+                  
+                  <div className="info-label">GitHub:</div>
+                  <div className="info-value">Baibhab13</div>
+                </div>
+                
+                <p className="text-muted-foreground mt-4 border-t border-border pt-4 dark:text-gray-300">
+                  I'm a passionate developer with a keen eye for design. I enjoy creating seamless, 
+                  user-centric digital experiences that solve real problems.
+                </p>
+              </CardContent>
+            </Card>
             
-            <p className="text-muted-foreground mb-6 dark:text-gray-300">
-              I'm a passionate developer with a keen eye for design. I enjoy creating seamless, 
-              user-centric digital experiences that solve real problems.
-            </p>
-            
-            <div className="space-y-3">
-              <div className="info-item">
-                <span className="info-label">Name:</span>
-                <span className="info-value">Baibhab Sahu</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Email:</span>
-                <span className="info-value">baibhabsahu31@gmail.com</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Location:</span>
-                <span className="info-value">Berhampur, Odisha</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">GitHub:</span>
-                <span className="info-value">Baibhab13</span>
-              </div>
-            </div>
+            {/* Skills combined in one card */}
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                    <Code size={20} className="text-primary-foreground" />
+                  </div>
+                  <CardTitle className="gradient-text">Skills</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <h3 className="text-lg font-medium mb-3 text-foreground/90 dark:text-gray-200">Technical</h3>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {technicalSkills.map((skill, index) => (
+                    <Badge key={index} variant="outline" className="skill-badge animate-scale-in" 
+                      style={{ animationDelay: `${0.1 + 0.05 * index}s` }}>
+                      <span className="mr-1">{skill.icon}</span> {skill.name}
+                    </Badge>
+                  ))}
+                </div>
+                
+                <Separator className="my-4" />
+                
+                <h3 className="text-lg font-medium mb-3 text-foreground/90 dark:text-gray-200">Soft Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {softSkills.map((skill, index) => (
+                    <Badge key={index} variant="outline" className="skill-badge animate-scale-in"
+                      style={{ animationDelay: `${0.3 + 0.1 * index}s` }}>
+                      <span className="mr-1">{skill.icon}</span> {skill.name}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
           
-          {/* Education - Enhanced with better alignment */}
-          <div className="glass-card p-8 animate-scale-in delay-300" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <Book size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Education</h3>
-            </div>
+          {/* Middle section - Taking up 4 columns */}
+          <div className="lg:col-span-4 space-y-6">
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                    <Book size={20} className="text-accent-foreground" />
+                  </div>
+                  <CardTitle className="gradient-text">Education</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4 pt-4">
+                <div className="education-card">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-medium text-foreground dark:text-white">BTech in Computer Science</h4>
+                    <span className="text-xs bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full">2022 - present</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mb-1">Parala Maharaja Engineering College, Berhampur</p>
+                  <p className="text-sm font-medium text-primary dark:text-primary">CGPA: 8.7</p>
+                </div>
+                
+                <div className="education-card">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-medium text-foreground dark:text-white">Senior Secondary (CBSE XII)</h4>
+                    <span className="text-xs bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full">2018 - 2020</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mb-1">Kendriya Vidyalaya, Berhampur</p>
+                  <p className="text-sm font-medium text-primary dark:text-primary">Percentage: 90.8%</p>
+                </div>
+                
+                <div className="education-card">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-medium text-foreground dark:text-white">Higher Secondary (CBSE X)</h4>
+                    <span className="text-xs bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full">2018</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mb-1">Kendriya Vidyalaya, Berhampur</p>
+                  <p className="text-sm font-medium text-primary dark:text-primary">Percentage: 91%</p>
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="space-y-4">
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">BTech in Computer Science</h4>
-                  <span className="education-date">2022 - present</span>
+            {/* Experience Card */}
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                    <Briefcase size={20} className="text-accent-foreground" />
+                  </div>
+                  <CardTitle className="gradient-text">Experience</CardTitle>
                 </div>
-                <p className="education-school">Parala Maharaja Engineering College, Berhampur</p>
-                <p className="education-grade">CGPA: 8.7</p>
-              </div>
-              
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">Senior Secondary (CBSE Class XII)</h4>
-                  <span className="education-date">2018 - 2020</span>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="experience-card">
+                  <div className="flex justify-between items-start mb-1">
+                    <h4 className="font-medium text-foreground dark:text-white">Summer Intern</h4>
+                    <span className="text-xs bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full">June - July 2024</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mb-2">PMEC, Berhampur, Odisha</p>
+                  <ul className="text-sm space-y-2 pl-5 list-disc">
+                    <li className="text-muted-foreground dark:text-gray-300">Developed 3 ML projects under professors' guidance.</li>
+                    <li className="text-muted-foreground dark:text-gray-300">Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
+                    <li className="text-muted-foreground dark:text-gray-300">Enhanced an LLM project, boosting performance by 20%.</li>
+                  </ul>
                 </div>
-                <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
-                <p className="education-grade">Percentage: 90.8%</p>
-              </div>
-              
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">Higher Secondary (CBSE Class X)</h4>
-                  <span className="education-date">2018</span>
-                </div>
-                <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
-                <p className="education-grade">Percentage: 91%</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
           
-          {/* Experience - Enhanced with better styling */}
-          <div className="glass-card p-8 animate-scale-in delay-500" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <Briefcase size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Experience</h3>
-            </div>
-            
-            <div className="education-card">
-              <div className="education-header">
-                <h4 className="education-title">Summer Intern</h4>
-                <span className="education-date">June - July 2024</span>
-              </div>
-              <p className="education-school">PMEC, Berhampur, Odisha</p>
-              <ul className="text-sm list-disc pl-5 space-y-2 mt-2">
-                <li className="text-muted-foreground dark:text-gray-300">Developed 3 ML projects under professors' guidance.</li>
-                <li className="text-muted-foreground dark:text-gray-300">Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
-                <li className="text-muted-foreground dark:text-gray-300">Enhanced an LLM project, boosting performance by 20%.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        {/* Achievements Section */}
-        <div className="mt-16 glass-card p-8 animate-slide-in-right delay-200">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-achievement-bg))] flex items-center justify-center mr-4">
-              <Trophy size={20} className="text-white" />
-            </div>
-            <h3 className="text-xl font-medium gradient-achievement">Achievements</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="achievement-card animate-bounce-in" 
-                style={{ animationDelay: `${0.3 + 0.1 * index}s` }}>
-                <Award size={18} className="text-[hsl(var(--about-achievement-bg))] mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground dark:text-gray-300">{achievement}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Positions of Responsibility Section */}
-        <div className="mt-10 glass-card p-8 animate-slide-in-left delay-400">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-responsibility-bg))] flex items-center justify-center mr-4">
-              <Users size={20} className="text-white" />
-            </div>
-            <h3 className="text-xl font-medium gradient-responsibility">Positions of Responsibility</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {responsibilities.map((responsibility, index) => (
-              <div key={index} className="responsibility-card animate-bounce-in" 
-                style={{ animationDelay: `${0.5 + 0.1 * index}s` }}>
-                <UserCheck size={18} className="text-[hsl(var(--about-responsibility-bg))] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-medium text-foreground dark:text-white">{responsibility.position}</h4>
-                  <p className="text-sm text-muted-foreground mt-1 dark:text-gray-300">{responsibility.description}</p>
+          {/* Right section - Taking up 4 columns */}
+          <div className="lg:col-span-4 space-y-6">
+            {/* Achievements Card */}
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-destructive flex items-center justify-center">
+                    <Trophy size={20} className="text-destructive-foreground" />
+                  </div>
+                  <CardTitle className="gradient-achievement">Achievements</CardTitle>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Skills */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Technical Skills */}
-          <div className="glass-card p-8 animate-slide-in-right delay-600">
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <Code size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Technical Skills</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {technicalSkills.map((skill, index) => (
-                <span 
-                  key={index} 
-                  className="px-4 py-2 backdrop-blur-sm bg-white/70 dark:bg-black/30 rounded-full shadow-sm text-sm animate-bounce-in flex items-center gap-2"
-                  style={{ animationDelay: `${0.7 + 0.05 * index}s` }}
-                >
-                  {skill.icon}
-                  {skill.name}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          {/* Soft Skills */}
-          <div className="glass-card p-8 animate-slide-in-left delay-700">
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <UserCheck size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Soft Skills</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {softSkills.map((skill, index) => (
-                <span 
-                  key={index} 
-                  className="px-4 py-2 backdrop-blur-sm bg-white/70 dark:bg-black/30 rounded-full shadow-sm text-sm animate-bounce-in flex items-center gap-2"
-                  style={{ animationDelay: `${0.9 + 0.1 * index}s` }}
-                >
-                  {skill.icon}
-                  {skill.name}
-                </span>
-              ))}
-            </div>
+              </CardHeader>
+              <CardContent className="space-y-3 pt-4">
+                {achievements.map((achievement, index) => (
+                  <HoverCard key={index}>
+                    <HoverCardTrigger asChild>
+                      <div className="achievement-item animate-fade-in" style={{ animationDelay: `${0.6 + 0.1 * index}s` }}>
+                        <Award size={18} className="text-destructive flex-shrink-0" />
+                        <p className="text-sm text-muted-foreground dark:text-gray-300 line-clamp-1">
+                          {achievement.split(',')[0]}...
+                        </p>
+                      </div>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 p-4">
+                      <p className="text-sm">{achievement}</p>
+                    </HoverCardContent>
+                  </HoverCard>
+                ))}
+              </CardContent>
+            </Card>
+            
+            {/* Responsibilities Card */}
+            <Card className="neo-card animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                    <Users size={20} className="text-secondary-foreground" />
+                  </div>
+                  <CardTitle className="gradient-responsibility">Responsibilities</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 pt-4">
+                {responsibilities.map((responsibility, index) => (
+                  <HoverCard key={index}>
+                    <HoverCardTrigger asChild>
+                      <div className="responsibility-item animate-fade-in" style={{ animationDelay: `${0.7 + 0.1 * index}s` }}>
+                        <UserCheck size={18} className="text-secondary-foreground/70 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-medium text-foreground dark:text-white">{responsibility.position}</h4>
+                        </div>
+                      </div>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 p-4">
+                      <h4 className="font-medium mb-2">{responsibility.position}</h4>
+                      <p className="text-sm">{responsibility.description}</p>
+                    </HoverCardContent>
+                  </HoverCard>
+                ))}
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
