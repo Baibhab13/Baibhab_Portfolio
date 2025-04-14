@@ -28,7 +28,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="bg-background min-h-screen dark:bg-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-[hsl(var(--hero-gradient-from))] to-[hsl(var(--hero-gradient-to))] dark:from-[hsl(var(--hero-gradient-from))] dark:to-[hsl(var(--hero-gradient-to))] dark:text-gray-100">
       <Navbar />
       <Hero />
       <About />

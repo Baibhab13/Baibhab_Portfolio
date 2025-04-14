@@ -36,19 +36,20 @@ const Navbar = () => {
   };
   
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
+      ${scrolled ? 'bg-white/70 backdrop-blur-md shadow-md dark:bg-gray-900/70' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
           <a 
             href="#home" 
-            className="text-xl font-serif font-medium cursor-pointer"
+            className="text-xl font-serif font-medium cursor-pointer transition-colors hover:text-primary"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('home');
             }}
           >
-            Portfolio
+            <span className="gradient-text">Portfolio</span>
           </a>
           
           {/* Desktop Navigation */}
@@ -57,7 +58,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item}`}
-                className="font-medium text-sm hover:text-primary/80 capitalize"
+                className="font-medium text-sm hover:text-primary capitalize relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection(item);
@@ -70,7 +71,7 @@ const Navbar = () => {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-500 hover:text-gray-700"
+            className="md:hidden text-gray-500 hover:text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -81,14 +82,14 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white">
+        <div className="md:hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 shadow-md">
           <div className="container mx-auto px-6 py-4">
             <nav className="flex flex-col space-y-4">
               {['home', 'about', 'projects', 'contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item}`}
-                  className="font-medium text-sm hover:text-primary/80 capitalize py-2"
+                  className="font-medium text-sm hover:text-primary capitalize py-2 border-b border-gray-100 dark:border-gray-800"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(item);

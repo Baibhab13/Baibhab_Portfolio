@@ -6,88 +6,96 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 213 85% 97%;
+    --foreground: 224 71% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 224 71% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 224 71% 4%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 220 8% 46%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 244 75% 92%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-background: 213 85% 97%;
+    --sidebar-foreground: 224 71% 4%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 262 83% 58%;
     
-    /* New color variables for about section */
-    --about-card-bg: 221 70% 95%;
-    --about-card-border: 217 60% 84%;
-    --about-icon-bg: 222 83% 60%;
+    /* About section vibrant color variables */
+    --about-card-bg: 216 100% 97%;
+    --about-card-border: 213 100% 92%;
+    --about-icon-bg: 262 83% 58%;
     --about-achievement-bg: 280 90% 65%;
     --about-responsibility-bg: 190 80% 60%;
+    
+    /* Hero section gradient */
+    --hero-gradient-from: 213 85% 97%;
+    --hero-gradient-to: 244 75% 92%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 263 75% 67%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 5% 64.9%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 263 75% 67%;
     
     /* Dark mode colors for about section */
-    --about-card-bg: 225 30% 30%;
-    --about-card-border: 227 35% 40%;
-    --about-icon-bg: 221 75% 50%;
+    --about-card-bg: 222 32% 20%;
+    --about-card-border: 223 35% 25%;
+    --about-icon-bg: 263 75% 67%;
     --about-achievement-bg: 280 75% 55%;
     --about-responsibility-bg: 190 70% 45%;
+    
+    /* Hero section gradient */
+    --hero-gradient-from: 222 47% 11%;
+    --hero-gradient-to: 263 60% 18%;
   }
 }
 
@@ -117,24 +125,24 @@
   
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary mt-2 dark:bg-gray-300;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary mt-2 dark:bg-primary;
   }
   
   .project-card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:bg-gray-900 dark:border-gray-700;
+    @apply bg-white/80 backdrop-blur-md rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-white/30 dark:bg-gray-800/60 dark:border-gray-700/50;
   }
   
   .tag {
     @apply text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground font-medium dark:bg-gray-700 dark:text-gray-200;
   }
   
-  /* New About section styles */
+  /* Enhanced About section styles */
   .about-card {
     @apply bg-[hsl(var(--about-card-bg))] backdrop-blur-md border border-[hsl(var(--about-card-border))] rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out;
   }
   
   .glass-card {
-    @apply backdrop-blur-md bg-white/20 dark:bg-black/20 border border-white/30 dark:border-gray-700/30 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300;
+    @apply backdrop-blur-md bg-white/30 dark:bg-black/20 border border-white/40 dark:border-gray-700/30 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300;
   }
   
   .about-icon-wrapper {
@@ -142,15 +150,16 @@
   }
   
   .skill-icon-wrapper {
-    @apply flex flex-col items-center justify-center p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+    @apply flex flex-col items-center justify-center p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-sm border border-white/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1;
   }
   
+  /* Updated achievement and responsibility cards */
   .achievement-card {
-    @apply flex items-start gap-3 p-4 bg-white/40 dark:bg-gray-800/40 backdrop-blur-md border border-white/30 dark:border-gray-700/30 rounded-lg hover:shadow-md transition-all duration-300;
+    @apply flex items-start gap-3 p-4 bg-white/60 dark:bg-gray-800/40 backdrop-blur-md border border-white/50 dark:border-gray-700/40 rounded-lg hover:shadow-md transition-all duration-300;
   }
   
   .responsibility-card {
-    @apply flex items-start gap-3 p-4 bg-white/40 dark:bg-gray-800/40 backdrop-blur-md border border-white/30 dark:border-gray-700/30 rounded-lg hover:shadow-md transition-all duration-300;
+    @apply flex items-start gap-3 p-4 bg-white/60 dark:bg-gray-800/40 backdrop-blur-md border border-white/50 dark:border-gray-700/40 rounded-lg hover:shadow-md transition-all duration-300;
   }
   
   .achievement-icon {
@@ -160,14 +169,52 @@
   .responsibility-icon {
     @apply flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(var(--about-responsibility-bg))] text-white shadow-md;
   }
+  
+  /* Enhanced info card for personal info and education */
+  .info-item {
+    @apply backdrop-blur-sm bg-white/50 dark:bg-black/30 p-3 rounded-lg border border-white/50 dark:border-gray-700/40 flex justify-between items-center mb-3 hover:shadow-md transition-all duration-300;
+  }
+  
+  .info-label {
+    @apply font-medium text-foreground/90 dark:text-gray-200;
+  }
+  
+  .info-value {
+    @apply text-muted-foreground dark:text-gray-300 text-right;
+  }
+  
+  /* Enhanced education card */
+  .education-card {
+    @apply backdrop-blur-md bg-white/60 dark:bg-black/30 p-4 rounded-lg border border-white/50 dark:border-gray-700/40 mb-4 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .education-header {
+    @apply flex justify-between items-start mb-2;
+  }
+  
+  .education-title {
+    @apply font-medium text-foreground dark:text-white;
+  }
+  
+  .education-date {
+    @apply text-sm text-muted-foreground dark:text-gray-400 bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full;
+  }
+  
+  .education-school {
+    @apply text-sm text-muted-foreground dark:text-gray-400 mb-1;
+  }
+  
+  .education-grade {
+    @apply text-sm font-medium text-primary dark:text-primary;
+  }
 }
 
-/* Dark mode transitions */
-.dark .dark-transition {
-  @apply transition-colors duration-200;
+@layer base {
+  .dark-transition {
+    @apply transition-colors duration-200;
+  }
 }
 
-/* Add dark mode animations */
 @keyframes fadeInDark {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -177,7 +224,6 @@
   animation: fadeInDark 0.5s ease-out forwards;
 }
 
-/* New animations for About section */
 @keyframes scaleIn {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -220,7 +266,6 @@
   opacity: 0;
 }
 
-/* Animation delays */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
@@ -232,7 +277,6 @@
 .delay-900 { animation-delay: 0.9s; }
 .delay-1000 { animation-delay: 1s; }
 
-/* Gradient text */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400;
 }
@@ -245,7 +289,6 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400;
 }
 
-/* Zigzag divider */
 .zigzag-divider {
   position: relative;
   height: 40px;
@@ -262,7 +305,6 @@
   background-size: 20px 40px;
 }
 
-/* Glass effect */
 .glass-effect {
   @apply backdrop-blur-sm bg-white/30 dark:bg-black/30 border border-white/20 dark:border-gray-700/30;
 }

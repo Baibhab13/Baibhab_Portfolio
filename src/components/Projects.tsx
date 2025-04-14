@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Code, Layers, ExternalLink } from 'lucide-react';
 
 /**
  * Projects section component
@@ -41,9 +41,9 @@ const Projects = () => {
   ];
   
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-gradient-to-b from-purple-50/30 to-blue-50/30 backdrop-blur-sm dark:from-purple-900/20 dark:to-blue-900/20">
       <div className="container mx-auto px-6">
-        <h2 className="section-title">My Projects</h2>
+        <h2 className="section-title gradient-text">My Projects</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mb-12">
           A collection of my recent work. Each project is unique and built with the goal of solving a specific problem.
         </p>
@@ -52,21 +52,22 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className="project-card animate-fade-in"
+              className="project-card animate-fade-in group"
               style={{ animationDelay: `${0.2 * index}s` }}
             >
               {/* Project Image */}
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden relative">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-medium mb-2">{project.title}</h3>
+                <h3 className="text-xl font-medium mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
@@ -74,7 +75,7 @@ const Projects = () => {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="tag">
+                    <span key={tagIndex} className="tag bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-foreground">
                       {tag}
                     </span>
                   ))}
@@ -84,21 +85,21 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a 
                     href={project.demoLink} 
-                    className="flex items-center text-sm font-medium hover:text-primary/80 transition-colors"
+                    className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <ExternalLink size={16} className="mr-1" />
                     Live Demo
-                    <ArrowRight size={16} className="ml-1" />
                   </a>
                   <a 
                     href={project.codeLink} 
-                    className="flex items-center text-sm font-medium hover:text-primary/80 transition-colors"
+                    className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <Code size={16} className="mr-1" />
                     View Code
-                    <ArrowRight size={16} className="ml-1" />
                   </a>
                 </div>
               </div>
