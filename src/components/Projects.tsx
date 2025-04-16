@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Code, Layers, ExternalLink, CheckSquare, FileText, Calendar } from 'lucide-react';
 
@@ -9,13 +8,12 @@ import { ArrowRight, Code, Layers, ExternalLink, CheckSquare, FileText, Calendar
  * and links to live demos or repositories.
  */
 const Projects = () => {
-  // Array of projects for easy modification - updated from resume and GitHub
   const projects = [
     {
       id: 1,
       title: "Farm 2 You",
       description: "Developed an Android app using Jetpack Compose and Android Studio for SIII. The app connects farmers directly with markets, eliminating intermediaries. Features include an intuitive UI, smooth navigation, and an AI assistant for informed decision-making.",
-      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-150093738664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
       tags: ["Android", "Jetpack Compose", "AI", "Kotlin"],
       demoLink: "#",
       codeLink: "#",
@@ -55,7 +53,7 @@ const Projects = () => {
       id: 5,
       title: "FarmConnect",
       description: "Created for the Project Innovation Contest ICDCIT 2025, this app enables secure transactions and contract farming. Built with Jetpack Compose and Android Studio, it provides fraud protection and an AI assistant.",
-      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
       tags: ["Android", "Jetpack Compose", "AI", "Security"],
       demoLink: "#",
       codeLink: "#",
