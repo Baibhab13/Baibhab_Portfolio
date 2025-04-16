@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Code, Layers, ExternalLink } from 'lucide-react';
+import { ArrowRight, Code, Layers, ExternalLink, CheckSquare, FileText, Calendar } from 'lucide-react';
 
 /**
  * Projects section component
@@ -9,7 +9,7 @@ import { ArrowRight, Code, Layers, ExternalLink } from 'lucide-react';
  * and links to live demos or repositories.
  */
 const Projects = () => {
-  // Array of projects for easy modification - updated from resume
+  // Array of projects for easy modification - updated from resume and GitHub
   const projects = [
     {
       id: 1,
@@ -19,24 +19,57 @@ const Projects = () => {
       tags: ["Android", "Jetpack Compose", "AI", "Kotlin"],
       demoLink: "#",
       codeLink: "#",
+      icon: <Layers className="text-primary" />
     },
     {
       id: 2,
+      title: "Todo App",
+      description: "A fully functional todo application with features to add, edit, delete, and mark tasks as complete. Built with React and styled with Tailwind CSS for a responsive and clean user interface.",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Frontend"],
+      demoLink: "#",
+      codeLink: "https://github.com/baibhav1314/Todo",
+      icon: <CheckSquare className="text-primary" />
+    },
+    {
+      id: 3,
+      title: "Resume Categorization",
+      description: "Developed a system to automatically categorize resumes based on job descriptions using natural language processing and machine learning techniques, streamlining the HR recruitment process.",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
+      tags: ["Python", "NLP", "Machine Learning", "Data Analysis"],
+      demoLink: "#",
+      codeLink: "https://github.com/baibhav1314/Resume-categoriazation",
+      icon: <FileText className="text-primary" />
+    },
+    {
+      id: 4,
+      title: "Attendance Tracker",
+      description: "A comprehensive attendance management system that allows institutions to track student attendance efficiently. Features include automated reports, attendance status visualization, and Excel export functionality.",
+      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80",
+      tags: ["JavaScript", "HTML", "CSS", "Frontend"],
+      demoLink: "#",
+      codeLink: "https://github.com/baibhav1314/Attendence-Tracker",
+      icon: <Calendar className="text-primary" />
+    },
+    {
+      id: 5,
       title: "FarmConnect",
       description: "Created for the Project Innovation Contest ICDCIT 2025, this app enables secure transactions and contract farming. Built with Jetpack Compose and Android Studio, it provides fraud protection and an AI assistant.",
       image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?auto=format&fit=crop&w=800&q=80",
       tags: ["Android", "Jetpack Compose", "AI", "Security"],
       demoLink: "#",
       codeLink: "#",
+      icon: <Layers className="text-primary" />
     },
     {
-      id: 3,
+      id: 6,
       title: "Laptop Price Prediction",
       description: "Developed a user-friendly web app with Streamlit, allowing users to input laptop features and receive price predictions using an ML model trained on market data.",
       image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80",
       tags: ["Python", "Streamlit", "Machine Learning", "Data Analysis"],
       demoLink: "#",
       codeLink: "#",
+      icon: <Code className="text-primary" />
     },
   ];
   
@@ -60,14 +93,17 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-medium mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                <div className="flex items-center gap-2 mb-2">
+                  {project.icon}
+                  <h3 className="text-xl font-medium group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                </div>
                 <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
