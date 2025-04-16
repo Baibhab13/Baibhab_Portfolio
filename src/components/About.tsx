@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { User, Briefcase, Book, Code, UserCheck, FileCode, Globe, Figma, Server, Database, Cpu, ChevronRight, Trophy, Award, Users } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 /**
  * About section component
@@ -73,105 +73,138 @@ const About = () => {
       <div className="container mx-auto px-6">
         <h2 className="section-title gradient-text mb-10">About Me</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-12">
-          {/* Personal Info - Enhanced with better alignment */}
-          <div className="glass-card p-8 animate-scale-in delay-100" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <User size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Personal Info</h3>
-            </div>
+        {/* Horizontal Tabs for Personal Info, Education, and Experience */}
+        <div className="mb-16">
+          <Tabs defaultValue="personal" className="w-full">
+            <TabsList className="w-full flex justify-center mb-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-md p-1 rounded-full">
+              <TabsTrigger 
+                value="personal" 
+                className="flex items-center gap-2 px-6 py-3 rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
+              >
+                <User size={18} />
+                <span>Personal Info</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="education" 
+                className="flex items-center gap-2 px-6 py-3 rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
+              >
+                <Book size={18} />
+                <span>Education</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="experience" 
+                className="flex items-center gap-2 px-6 py-3 rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
+              >
+                <Briefcase size={18} />
+                <span>Experience</span>
+              </TabsTrigger>
+            </TabsList>
             
-            <p className="text-muted-foreground mb-6 dark:text-gray-300">
-              I'm a passionate developer with a keen eye for design. I enjoy creating seamless, 
-              user-centric digital experiences that solve real problems.
-            </p>
-            
-            <div className="space-y-3">
-              <div className="info-item">
-                <span className="info-label">Name:</span>
-                <span className="info-value">Baibhab Sahu</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Email:</span>
-                <span className="info-value">baibhabsahu31@gmail.com</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Location:</span>
-                <span className="info-value">Berhampur, Odisha</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">GitHub:</span>
-                <span className="info-value">Baibhab13</span>
-              </div>
-            </div>
-          </div>
-          
-          {/* Education - Enhanced with better alignment */}
-          <div className="glass-card p-8 animate-scale-in delay-300" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <Book size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Education</h3>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">BTech in Computer Science</h4>
-                  <span className="education-date">2022 - present</span>
+            {/* Personal Info Tab Content */}
+            <TabsContent value="personal" className="animate-in fade-in-50 mt-6">
+              <div className="glass-card p-8 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex items-center mb-6">
+                  <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                    <User size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-medium gradient-text">Personal Info</h3>
                 </div>
-                <p className="education-school">Parala Maharaja Engineering College, Berhampur</p>
-                <p className="education-grade">CGPA: 8.7</p>
-              </div>
-              
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">Senior Secondary (CBSE Class XII)</h4>
-                  <span className="education-date">2018 - 2020</span>
+                
+                <p className="text-muted-foreground mb-6 dark:text-gray-300">
+                  I'm a passionate developer with a keen eye for design. I enjoy creating seamless, 
+                  user-centric digital experiences that solve real problems.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="info-item">
+                    <span className="info-label">Name:</span>
+                    <span className="info-value">Baibhab Sahu</span>
+                  </div>
+                  <div className="info-item">
+                    <span className="info-label">Email:</span>
+                    <span className="info-value">baibhabsahu31@gmail.com</span>
+                  </div>
+                  <div className="info-item">
+                    <span className="info-label">Location:</span>
+                    <span className="info-value">Berhampur, Odisha</span>
+                  </div>
+                  <div className="info-item">
+                    <span className="info-label">GitHub:</span>
+                    <span className="info-value">Baibhab13</span>
+                  </div>
                 </div>
-                <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
-                <p className="education-grade">Percentage: 90.8%</p>
               </div>
-              
-              <div className="education-card">
-                <div className="education-header">
-                  <h4 className="education-title">Higher Secondary (CBSE Class X)</h4>
-                  <span className="education-date">2018</span>
-                </div>
-                <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
-                <p className="education-grade">Percentage: 91%</p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Experience - Enhanced with better styling */}
-          <div className="glass-card p-8 animate-scale-in delay-500" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
-                <Briefcase size={20} className="text-white" />
-              </div>
-              <h3 className="text-xl font-medium gradient-text">Experience</h3>
-            </div>
+            </TabsContent>
             
-            <div className="education-card">
-              <div className="education-header">
-                <h4 className="education-title">Summer Intern</h4>
-                <span className="education-date">June - July 2024</span>
+            {/* Education Tab Content */}
+            <TabsContent value="education" className="animate-in fade-in-50 mt-6">
+              <div className="glass-card p-8 animate-scale-in" style={{ animationDelay: '0.4s' }}>
+                <div className="flex items-center mb-6">
+                  <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                    <Book size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-medium gradient-text">Education</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="education-card">
+                    <div className="education-header">
+                      <h4 className="education-title">BTech in Computer Science</h4>
+                      <span className="education-date">2022 - present</span>
+                    </div>
+                    <p className="education-school">Parala Maharaja Engineering College, Berhampur</p>
+                    <p className="education-grade">CGPA: 8.7</p>
+                  </div>
+                  
+                  <div className="education-card">
+                    <div className="education-header">
+                      <h4 className="education-title">Senior Secondary (CBSE Class XII)</h4>
+                      <span className="education-date">2018 - 2020</span>
+                    </div>
+                    <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
+                    <p className="education-grade">Percentage: 90.8%</p>
+                  </div>
+                  
+                  <div className="education-card">
+                    <div className="education-header">
+                      <h4 className="education-title">Higher Secondary (CBSE Class X)</h4>
+                      <span className="education-date">2018</span>
+                    </div>
+                    <p className="education-school">Kendriya Vidyalaya, Berhampur</p>
+                    <p className="education-grade">Percentage: 91%</p>
+                  </div>
+                </div>
               </div>
-              <p className="education-school">PMEC, Berhampur, Odisha</p>
-              <ul className="text-sm list-disc pl-5 space-y-2 mt-2">
-                <li className="text-muted-foreground dark:text-gray-300">Developed 3 ML projects under professors' guidance.</li>
-                <li className="text-muted-foreground dark:text-gray-300">Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
-                <li className="text-muted-foreground dark:text-gray-300">Enhanced an LLM project, boosting performance by 20%.</li>
-              </ul>
-            </div>
-          </div>
+            </TabsContent>
+            
+            {/* Experience Tab Content */}
+            <TabsContent value="experience" className="animate-in fade-in-50 mt-6">
+              <div className="glass-card p-8 animate-scale-in" style={{ animationDelay: '0.6s' }}>
+                <div className="flex items-center mb-6">
+                  <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-icon-bg))] flex items-center justify-center mr-4">
+                    <Briefcase size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-medium gradient-text">Experience</h3>
+                </div>
+                
+                <div className="education-card">
+                  <div className="education-header">
+                    <h4 className="education-title">Summer Intern</h4>
+                    <span className="education-date">June - July 2024</span>
+                  </div>
+                  <p className="education-school">PMEC, Berhampur, Odisha</p>
+                  <ul className="text-sm list-disc pl-5 space-y-2 mt-2">
+                    <li className="text-muted-foreground dark:text-gray-300">Developed 3 ML projects under professors' guidance.</li>
+                    <li className="text-muted-foreground dark:text-gray-300">Created a neural network for image classification with 95% accuracy on 10,000 images.</li>
+                    <li className="text-muted-foreground dark:text-gray-300">Enhanced an LLM project, boosting performance by 20%.</li>
+                  </ul>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
         
-        {/* Achievements Section */}
+        {/* Achievements Section - Keeping the previous style */}
         <div className="mt-16 glass-card p-8 animate-slide-in-right delay-200">
           <div className="flex items-center mb-6">
             <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-achievement-bg))] flex items-center justify-center mr-4">
@@ -190,7 +223,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Positions of Responsibility Section */}
+        {/* Positions of Responsibility Section - Keeping the previous style */}
         <div className="mt-10 glass-card p-8 animate-slide-in-left delay-400">
           <div className="flex items-center mb-6">
             <div className="w-10 h-10 rounded-full bg-[hsl(var(--about-responsibility-bg))] flex items-center justify-center mr-4">
@@ -212,7 +245,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills */}
+        {/* Skills - Keeping the previous style */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Technical Skills */}
           <div className="glass-card p-8 animate-slide-in-right delay-600">
