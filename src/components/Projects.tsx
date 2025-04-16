@@ -48,11 +48,11 @@ const Projects = () => {
           A collection of my recent work. Each project is unique and built with the goal of solving a specific problem.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-nowrap overflow-x-auto gap-6 pb-4 snap-x">
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className="project-card animate-fade-in group"
+              className="project-card animate-fade-in flex-shrink-0 snap-center w-[350px] md:w-[400px]"
               style={{ animationDelay: `${0.2 * index}s` }}
             >
               {/* Project Image */}
