@@ -22,9 +22,9 @@ const Projects = () => {
     {
       id: 2,
       title: "Todo App",
-      description: "A fully functional todo application with features to add, edit, delete, and mark tasks as complete. Built with React and styled with Tailwind CSS for a responsive and clean user interface.",
+      description: "A comprehensive Android todo application built with Jetpack Compose for the frontend and Room database for local data persistence. Features include add, edit, delete, and mark tasks as complete with a modern, responsive UI.",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "JavaScript", "Tailwind CSS", "Frontend"],
+      tags: ["Android", "Jetpack Compose", "Room Database", "Kotlin"],
       demoLink: "#",
       codeLink: "https://github.com/baibhav1314/Todo",
       icon: <CheckSquare className="text-primary" />
