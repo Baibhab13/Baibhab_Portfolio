@@ -1,310 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 180 75% 97%;
-    --foreground: 224 71% 4%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-
-    --primary: 250 83% 58%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-
-    --muted: 214 32% 91%;
-    --muted-foreground: 220 8% 46%;
-
-    --accent: 244 75% 92%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 250 83% 58%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 180 75% 97%;
-    --sidebar-foreground: 224 71% 4%;
-    --sidebar-primary: 250 83% 58%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 214 32% 91%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 250 83% 58%;
-    
-    /* About section vibrant color variables */
-    --about-card-bg: 186 100% 97%;
-    --about-card-border: 183 100% 92%;
-    --about-icon-bg: 250 83% 58%;
-    --about-achievement-bg: 330 85% 65%;
-    --about-responsibility-bg: 190 80% 60%;
-    
-    /* Hero section gradient */
-    --hero-gradient-from: 180 75% 97%;
-    --hero-gradient-to: 244 75% 92%;
+@layer utilities {
+  /* Subtle Dot Pattern */
+  .bg-dot-pattern {
+    background-image: 
+      radial-gradient(hsl(var(--primary)) 0.5px, transparent 0.5px),
+      radial-gradient(hsl(var(--primary)) 0.5px, transparent 0.5px);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    opacity: 0.2;
   }
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 250 75% 67%;
-    --primary-foreground: 222 47% 11%;
-
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 32% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 250 75% 67%;
-    
-    /* Dark mode colors for about section */
-    --about-card-bg: 222 32% 20%;
-    --about-card-border: 223 35% 25%;
-    --about-icon-bg: 250 75% 67%;
-    --about-achievement-bg: 330 70% 55%;
-    --about-responsibility-bg: 190 70% 45%;
-    
-    /* Hero section gradient */
-    --hero-gradient-from: 222 47% 11%;
-    --hero-gradient-to: 250 60% 18%;
+  /* Diagonal Line Pattern */
+  .bg-diagonal-lines {
+    background-image: 
+      linear-gradient(45deg, rgba(var(--primary), 0.1) 25%, transparent 25%), 
+      linear-gradient(-45deg, rgba(var(--primary), 0.1) 25%, transparent 25%);
+    background-size: 40px 40px;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
+  /* Grid Pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(var(--primary), 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--primary), 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
-  
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-medium;
-  }
-  
-  p, span, li, a {
-    @apply font-sans;
-  }
-}
 
-@layer components {
-  .section-title {
-    @apply text-3xl md:text-4xl font-serif font-medium mb-6 relative;
+  /* Subtle Waves */
+  .bg-wave-pattern {
+    background-image: 
+      linear-gradient(to right, 
+        transparent, 
+        rgba(var(--primary), 0.05), 
+        transparent
+      ),
+      linear-gradient(to bottom, 
+        transparent, 
+        rgba(var(--primary), 0.05), 
+        transparent
+      );
+    background-size: 100% 50px, 50px 100%;
   }
-  
-  .section-title::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary mt-2 dark:bg-primary;
-  }
-  
-  .project-card {
-    @apply bg-white/80 backdrop-blur-md rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-white/30 dark:bg-gray-800/60 dark:border-gray-700/50;
-  }
-  
-  .tag {
-    @apply text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground font-medium dark:bg-gray-700 dark:text-gray-200;
-  }
-  
-  /* Enhanced About section styles */
-  .about-card {
-    @apply bg-[hsl(var(--about-card-bg))] backdrop-blur-md border border-[hsl(var(--about-card-border))] rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out;
-  }
-  
-  .glass-card {
-    @apply backdrop-blur-md bg-white/30 dark:bg-black/20 border border-white/40 dark:border-gray-700/30 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300;
-  }
-  
-  .about-icon-wrapper {
-    @apply flex items-center justify-center w-12 h-12 rounded-full text-white mb-4 shadow-md;
-  }
-  
-  .skill-icon-wrapper {
-    @apply flex flex-col items-center justify-center p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-sm border border-white/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300 hover:-translate-y-1;
-  }
-  
-  /* Updated achievement and responsibility cards */
-  .achievement-card {
-    @apply flex items-start gap-3 p-4 bg-white/60 dark:bg-gray-800/40 backdrop-blur-md border border-white/50 dark:border-gray-700/40 rounded-lg hover:shadow-md transition-all duration-300;
-  }
-  
-  .responsibility-card {
-    @apply flex items-start gap-3 p-4 bg-white/60 dark:bg-gray-800/40 backdrop-blur-md border border-white/50 dark:border-gray-700/40 rounded-lg hover:shadow-md transition-all duration-300;
-  }
-  
-  .achievement-icon {
-    @apply flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(var(--about-achievement-bg))] text-white shadow-md;
-  }
-  
-  .responsibility-icon {
-    @apply flex items-center justify-center w-10 h-10 rounded-full bg-[hsl(var(--about-responsibility-bg))] text-white shadow-md;
-  }
-  
-  /* Enhanced info card for personal info and education */
-  .info-item {
-    @apply backdrop-blur-sm bg-white/50 dark:bg-black/30 p-3 rounded-lg border border-white/50 dark:border-gray-700/40 flex justify-between items-center mb-3 hover:shadow-md transition-all duration-300;
-  }
-  
-  .info-label {
-    @apply font-medium text-foreground/90 dark:text-gray-200;
-  }
-  
-  .info-value {
-    @apply text-muted-foreground dark:text-gray-300 text-right;
-  }
-  
-  /* Enhanced education card */
-  .education-card {
-    @apply backdrop-blur-md bg-white/60 dark:bg-black/30 p-4 rounded-lg border border-white/50 dark:border-gray-700/40 mb-4 hover:shadow-lg transition-all duration-300;
-  }
-  
-  .education-header {
-    @apply flex justify-between items-start mb-2;
-  }
-  
-  .education-title {
-    @apply font-medium text-foreground dark:text-white;
-  }
-  
-  .education-date {
-    @apply text-sm text-muted-foreground dark:text-gray-400 bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full;
-  }
-  
-  .education-school {
-    @apply text-sm text-muted-foreground dark:text-gray-400 mb-1;
-  }
-  
-  .education-grade {
-    @apply text-sm font-medium text-primary dark:text-primary;
-  }
-}
-
-@layer base {
-  .dark-transition {
-    @apply transition-colors duration-200;
-  }
-}
-
-@keyframes fadeInDark {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.dark .animate-fade-in-dark {
-  animation: fadeInDark 0.5s ease-out forwards;
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes slideInRight {
-  from { transform: translateX(20px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInLeft {
-  from { transform: translateX(-20px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes bounceIn {
-  0% { transform: scale(0.3); opacity: 0; }
-  40% { transform: scale(1.1); }
-  60% { transform: scale(0.9); }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  opacity: 0;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-bounce-in {
-  animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  opacity: 0;
-}
-
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
-.delay-700 { animation-delay: 0.7s; }
-.delay-800 { animation-delay: 0.8s; }
-.delay-900 { animation-delay: 0.9s; }
-.delay-1000 { animation-delay: 1s; }
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400;
-}
-
-.gradient-achievement {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400;
-}
-
-.gradient-responsibility {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400;
-}
-
-.zigzag-divider {
-  position: relative;
-  height: 40px;
-  margin-bottom: 20px;
-}
-
-.zigzag-divider:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: linear-gradient(-45deg, transparent 33.33%, rgba(147, 51, 234, 0.1) 33.33%, rgba(147, 51, 234, 0.1) 66.66%, transparent 66.66%), linear-gradient(45deg, transparent 33.33%, rgba(147, 51, 234, 0.1) 33.33%, rgba(147, 51, 234, 0.1) 66.66%, transparent 66.66%);
-  background-size: 20px 40px;
-}
-
-.glass-effect {
-  @apply backdrop-blur-sm bg-white/30 dark:bg-black/30 border border-white/20 dark:border-gray-700/30;
 }
