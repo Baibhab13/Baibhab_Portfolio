@@ -28,7 +28,9 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative">
+      {/* Add subtle background pattern */}
+      <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
       <Navbar />
       <Hero />
       <About />

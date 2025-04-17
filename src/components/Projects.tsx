@@ -1,5 +1,9 @@
+
 import React from 'react';
 import { ArrowRight, Code, Layers, ExternalLink, CheckSquare, FileText, Calendar } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 
 /**
  * Projects section component
@@ -79,65 +83,79 @@ const Projects = () => {
           A collection of my recent work. Each project is unique and built with the goal of solving a specific problem.
         </p>
         
-        <div className="flex flex-nowrap overflow-x-auto gap-6 pb-4 snap-x">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className="project-card animate-fade-in flex-shrink-0 snap-center w-[350px] md:w-[400px]"
-              style={{ animationDelay: `${0.2 * index}s` }}
+            <Card 
+              key={project.id}
+              className="group overflow-hidden border border-primary/10 bg-white/70 dark:bg-gray-800/50 backdrop-blur-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+              style={{ 
+                animationDelay: `${0.1 * index}s`,
+                opacity: 0,
+                animation: 'fade-in 0.6s ease-out forwards'
+              }}
             >
-              {/* Project Image */}
-              <div className="aspect-video overflow-hidden relative">
+              {/* Project Image with Overlay */}
+              <div className="relative aspect-video overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1545239351-cefa43af60f3?q=80&w=800";
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <h3 className="text-white text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
+                </div>
               </div>
               
-              {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
+              <CardHeader className="flex flex-row items-center gap-2 p-5 pb-0">
+                <span className="p-2 rounded-md bg-primary/10 dark:bg-primary/20">
                   {project.icon}
-                  <h3 className="text-xl font-medium group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
+                </span>
+                <h3 className="text-xl font-medium">{project.title}</h3>
+              </CardHeader>
+              
+              <CardContent className="p-5">
+                <p className="text-muted-foreground mb-4 line-clamp-3">
                   {project.description}
                 </p>
                 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="tag bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-foreground">
+                    <Badge key={tagIndex} variant="outline" className="bg-primary/5 text-primary/90 dark:bg-primary/10 dark:text-primary-foreground border-primary/20">
                       {tag}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
-                
-                {/* Links */}
-                <div className="flex space-x-4">
-                  <a 
-                    href={project.demoLink} 
-                    className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+              </CardContent>
+              
+              <CardFooter className="flex justify-between p-5 pt-0 gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1"
+                  asChild
+                >
+                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={16} className="mr-1" />
-                    Live Demo
+                    Demo
                   </a>
-                  <a 
-                    href={project.codeLink} 
-                    className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1"
+                  asChild
+                >
+                  <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
                     <Code size={16} className="mr-1" />
-                    View Code
+                    Code
                   </a>
-                </div>
-              </div>
-            </div>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
         </div>
       </div>
