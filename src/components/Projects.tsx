@@ -4,6 +4,7 @@ import { ArrowRight, Code, Layers, ExternalLink, CheckSquare, FileText, Calendar
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 /**
  * Projects section component
@@ -12,6 +13,8 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
  * and links to live demos or repositories.
  */
 const Projects = () => {
+  const isMobile = useIsMobile();
+  
   const projects = [
     {
       id: 1,
@@ -76,18 +79,18 @@ const Projects = () => {
   ];
   
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-purple-50/30 to-blue-50/30 backdrop-blur-sm dark:from-purple-900/20 dark:to-blue-900/20">
-      <div className="container mx-auto px-6">
-        <h2 className="section-title gradient-text">My Projects</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mb-12">
+    <section id="projects" className="py-12 md:py-20 bg-gradient-to-b from-purple-50/30 to-blue-50/30 backdrop-blur-sm dark:from-purple-900/20 dark:to-blue-900/20">
+      <div className="container mx-auto px-4 md:px-6">
+        <h2 className="section-title gradient-text text-2xl md:text-3xl mb-4 md:mb-6">My Projects</h2>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mb-8 md:mb-12">
           A collection of my recent work. Each project is unique and built with the goal of solving a specific problem.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className="group overflow-hidden border border-primary/10 bg-white/70 dark:bg-gray-800/50 backdrop-blur-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+              className="group overflow-hidden border border-primary/10 bg-white/70 dark:bg-gray-800/50 backdrop-blur-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 h-full flex flex-col"
               style={{ 
                 animationDelay: `${0.1 * index}s`,
                 opacity: 0,
@@ -105,52 +108,52 @@ const Projects = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <h3 className="text-white text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
+                  <h3 className="text-white text-lg md:text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
                 </div>
               </div>
               
-              <CardHeader className="flex flex-row items-center gap-2 p-5 pb-0">
-                <span className="p-2 rounded-md bg-primary/10 dark:bg-primary/20">
+              <CardHeader className="flex flex-row items-center gap-2 p-4 md:p-5 pb-0">
+                <span className="p-2 rounded-md bg-primary/10 dark:bg-primary/20 shrink-0">
                   {project.icon}
                 </span>
-                <h3 className="text-xl font-medium">{project.title}</h3>
+                <h3 className="text-lg md:text-xl font-medium line-clamp-1">{project.title}</h3>
               </CardHeader>
               
-              <CardContent className="p-5">
-                <p className="text-muted-foreground mb-4 line-clamp-3">
+              <CardContent className="p-4 md:p-5 flex-grow">
+                <p className="text-muted-foreground mb-4 line-clamp-3 text-sm md:text-base">
                   {project.description}
                 </p>
                 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="bg-primary/5 text-primary/90 dark:bg-primary/10 dark:text-primary-foreground border-primary/20">
+                    <Badge key={tagIndex} variant="outline" className="bg-primary/5 text-primary/90 dark:bg-primary/10 dark:text-primary-foreground border-primary/20 text-xs md:text-sm">
                       {tag}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
               
-              <CardFooter className="flex justify-between p-5 pt-0 gap-2">
+              <CardFooter className="flex justify-between p-4 md:p-5 pt-0 gap-2 mt-auto">
                 <Button
                   variant="outline"
-                  size="sm"
-                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1"
+                  size={isMobile ? "sm" : "sm"}
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs md:text-sm"
                   asChild
                 >
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={16} className="mr-1" />
+                    <ExternalLink size={isMobile ? 14 : 16} className="mr-1" />
                     Demo
                   </a>
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="sm"
-                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1"
+                  size={isMobile ? "sm" : "sm"}
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs md:text-sm"
                   asChild
                 >
                   <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                    <Code size={16} className="mr-1" />
+                    <Code size={isMobile ? 14 : 16} className="mr-1" />
                     Code
                   </a>
                 </Button>
