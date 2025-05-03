@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="relative">
               <div className="aspect-square overflow-hidden rounded-3xl border-4 border-white/60 shadow-xl dark:border-gray-700/60 group">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
                   alt="Profile" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

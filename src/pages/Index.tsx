@@ -6,6 +6,7 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import TechBackground from '../components/TechBackground';
 
 /**
  * Main Portfolio Page
@@ -31,12 +32,19 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative overflow-x-hidden">
       {/* Add subtle background pattern */}
       <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      
+      {/* 3D Tech Background */}
+      <TechBackground />
+      
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
