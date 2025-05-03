@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { OrbitControls, Text3D } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Android mascot component
@@ -280,7 +280,7 @@ const FloatingObjects = () => {
   );
 };
 
-// Code blocks and data structures to represent ML concepts
+// Code blocks representation without using Text3D
 const CodeBlocks = () => {
   const groupRef = useRef<THREE.Group>(null);
   
@@ -292,56 +292,36 @@ const CodeBlocks = () => {
   
   return (
     <group ref={groupRef} position={[5, -3, -8]}>
+      {/* Code block background panel */}
       <mesh position={[0, 0, 0]} rotation={[0, Math.PI / 4, 0]}>
         <boxGeometry args={[2, 3, 0.1]} />
         <meshStandardMaterial color="#1e293b" />
       </mesh>
-      <mesh position={[0, 0, 0.06]} rotation={[0, Math.PI / 4, 0]}>
-        <Text3D
-          size={0.3}
-          height={0.02}
-          position={[-0.8, 0.8, 0]}
-          font="/fonts/Inter_Regular.json"
-        >
-          import tensorflow as tf
-          <meshStandardMaterial color="#38bdf8" />
-        </Text3D>
-        <Text3D
-          size={0.3}
-          height={0.02}
-          position={[-0.8, 0.4, 0]}
-          font="/fonts/Inter_Regular.json"
-        >
-          model = tf.keras.Sequential()
-          <meshStandardMaterial color="#a5b4fc" />
-        </Text3D>
-        <Text3D
-          size={0.3}
-          height={0.02}
-          position={[-0.8, 0, 0]}
-          font="/fonts/Inter_Regular.json"
-        >
-          model.add(tf.keras.layers)
-          <meshStandardMaterial color="#a5b4fc" />
-        </Text3D>
-        <Text3D
-          size={0.3}
-          height={0.02}
-          position={[-0.8, -0.4, 0]}
-          font="/fonts/Inter_Regular.json"
-        >
-          model.compile()
-          <meshStandardMaterial color="#c4b5fd" />
-        </Text3D>
-        <Text3D
-          size={0.3}
-          height={0.02}
-          position={[-0.8, -0.8, 0]}
-          font="/fonts/Inter_Regular.json"
-        >
-          model.fit(x_train, y_train)
-          <meshStandardMaterial color="#34d399" />
-        </Text3D>
+      
+      {/* Simplified representation of code */}
+      <mesh position={[-0.7, 0.8, 0.06]} rotation={[0, Math.PI / 4, 0]} scale={[1.3, 0.1, 0.01]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#38bdf8" />
+      </mesh>
+      
+      <mesh position={[-0.7, 0.4, 0.06]} rotation={[0, Math.PI / 4, 0]} scale={[1.5, 0.1, 0.01]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#a5b4fc" />
+      </mesh>
+      
+      <mesh position={[-0.7, 0, 0.06]} rotation={[0, Math.PI / 4, 0]} scale={[1.6, 0.1, 0.01]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#a5b4fc" />
+      </mesh>
+      
+      <mesh position={[-0.7, -0.4, 0.06]} rotation={[0, Math.PI / 4, 0]} scale={[1.2, 0.1, 0.01]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#c4b5fd" />
+      </mesh>
+      
+      <mesh position={[-0.7, -0.8, 0.06]} rotation={[0, Math.PI / 4, 0]} scale={[1.8, 0.1, 0.01]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="#34d399" />
       </mesh>
     </group>
   );
@@ -366,7 +346,7 @@ const TechBackground: React.FC = () => {
         {/* Original floating objects */}
         <FloatingObjects />
         
-        {/* Code blocks for ML */}
+        {/* Simplified code block visualization */}
         <CodeBlocks />
         
         {/* Controls */}
