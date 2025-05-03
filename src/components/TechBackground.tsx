@@ -2,22 +2,27 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { OrbitControls, Text3D, useGLTF } from '@react-three/drei';
+import { OrbitControls, Text3D } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Android mascot component
 const AndroidMascot = ({ position = [0, 0, -5] }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
+  // Convert the position array to a vector or tuple with exactly 3 elements
+  const positionVector: [number, number, number] = Array.isArray(position) && position.length === 3 
+    ? [position[0], position[1], position[2]]
+    : [0, 0, -5];
+  
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2;
-      meshRef.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3 + position[1];
+      meshRef.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3 + positionVector[1];
     }
   });
   
   return (
-    <mesh ref={meshRef} position={position} scale={0.5}>
+    <mesh ref={meshRef} position={positionVector} scale={0.5}>
       {/* Android head */}
       <group>
         {/* Body */}
@@ -82,12 +87,17 @@ const NeuralNetwork = ({ position = [0, 0, 0] }) => {
   const nodeCount = 20;
   const connectionCount = 30;
   
+  // Convert position to a fixed tuple
+  const positionVector: [number, number, number] = Array.isArray(position) && position.length === 3 
+    ? [position[0], position[1], position[2]] 
+    : [0, 0, 0];
+  
   // Generate random positions for nodes
   const nodePositions = Array.from({ length: nodeCount }, () => [
     (Math.random() - 0.5) * 8,
     (Math.random() - 0.5) * 8,
     (Math.random() - 0.5) * 4
-  ]);
+  ] as [number, number, number]); // Explicitly type as tuple
   
   // Generate random connections between nodes
   const connections = Array.from({ length: connectionCount }, () => {
@@ -107,7 +117,7 @@ const NeuralNetwork = ({ position = [0, 0, 0] }) => {
   });
   
   return (
-    <group ref={groupRef} position={position}>
+    <group ref={groupRef} position={positionVector}>
       {/* Nodes */}
       {nodePositions.map((pos, i) => (
         <mesh key={`node-${i}`} position={pos}>
@@ -135,7 +145,7 @@ const NeuralNetwork = ({ position = [0, 0, 0] }) => {
         
         // Normalize direction and create center position
         direction.normalize();
-        const center = [
+        const center: [number, number, number] = [
           (start[0] + end[0]) / 2,
           (start[1] + end[1]) / 2,
           (start[2] + end[2]) / 2
@@ -205,7 +215,7 @@ const FloatingObjects = () => {
     Math.random() * 20 - 10,
     Math.random() * 20 - 10,
     Math.random() * 10 - 15
-  ]);
+  ] as [number, number, number]); // Explicitly type as tuple
   
   // Materials with tech-themed colors
   const cubeMaterial = new THREE.MeshStandardMaterial({ 
@@ -234,7 +244,7 @@ const FloatingObjects = () => {
       {positions.slice(0, count / 3).map((position, i) => (
         <mesh 
           key={`cube-${i}`}
-          position={[position[0], position[1], position[2]]}
+          position={position}
           ref={(el: THREE.Mesh) => { if (el) cubeRefs.current[i] = el }}
           scale={0.3 + Math.random() * 0.5}
         >
@@ -246,7 +256,7 @@ const FloatingObjects = () => {
       {positions.slice(count / 3, 2 * count / 3).map((position, i) => (
         <mesh 
           key={`sphere-${i}`}
-          position={[position[0], position[1], position[2]]}
+          position={position}
           ref={(el: THREE.Mesh) => { if (el) sphereRefs.current[i] = el }}
           scale={0.2 + Math.random() * 0.4}
         >
@@ -258,7 +268,7 @@ const FloatingObjects = () => {
       {positions.slice(2 * count / 3, count).map((position, i) => (
         <mesh 
           key={`torus-${i}`}
-          position={[position[0], position[1], position[2]]}
+          position={position}
           ref={(el: THREE.Mesh) => { if (el) torusRefs.current[i] = el }}
           scale={0.3 + Math.random() * 0.5}
         >

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown, Mail, Github, Linkedin, Android, Brain, Microchip } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin, Smartphone, Brain as BrainIcon, Cpu } from 'lucide-react';
 
 /**
  * Hero section component
@@ -27,13 +27,13 @@ const Hero = () => {
             {/* Tech Icons */}
             <div className="flex justify-center gap-6 mb-8">
               <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-purple-400/20 backdrop-blur-sm animate-float">
-                <Android size={32} className="text-primary" />
+                <Smartphone size={32} className="text-primary" />
               </div>
               <div className="p-4 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "0.5s" }}>
-                <Brain size={32} className="text-cyan-500" />
+                <BrainIcon size={32} className="text-cyan-500" />
               </div>
               <div className="p-4 rounded-full bg-gradient-to-br from-emerald-500/20 to-green-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "1s" }}>
-                <Microchip size={32} className="text-emerald-500" />
+                <Cpu size={32} className="text-emerald-500" />
               </div>
             </div>
             
