@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin, Android, Brain, Microchip } from 'lucide-react';
 
 /**
  * Hero section component
  * 
- * This component renders the main hero section with a profile image,
- * name, job title and a brief introduction.
+ * This component renders the main hero section with name, job title, 
+ * and a brief introduction. The profile image has been removed in favor 
+ * of the 3D visuals in the background.
  */
 const Hero = () => {
   // Scroll to the about section when the arrow is clicked
@@ -20,35 +21,32 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       <div className="container mx-auto px-6 py-12 md:py-24">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* Profile Image */}
-          <div className="w-full md:w-5/12 lg:w-4/12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              <div className="aspect-square overflow-hidden rounded-3xl border-4 border-white/60 shadow-xl dark:border-gray-700/60 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full rounded-3xl bg-gradient-to-br from-primary/20 to-purple-400/20 dark:from-primary/30 dark:to-purple-500/30 backdrop-blur-sm"></div>
-            </div>
-          </div>
-          
+        <div className="flex flex-col items-center gap-8">
           {/* Text Content */}
-          <div className="w-full md:w-7/12 lg:w-8/12 text-center md:text-left animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="w-full max-w-3xl text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            {/* Tech Icons */}
+            <div className="flex justify-center gap-6 mb-8">
+              <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-purple-400/20 backdrop-blur-sm animate-float">
+                <Android size={32} className="text-primary" />
+              </div>
+              <div className="p-4 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "0.5s" }}>
+                <Brain size={32} className="text-cyan-500" />
+              </div>
+              <div className="p-4 rounded-full bg-gradient-to-br from-emerald-500/20 to-green-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "1s" }}>
+                <Microchip size={32} className="text-emerald-500" />
+              </div>
+            </div>
+            
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground mb-3 dark:text-gray-300">Hello, I'm</h2>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-4 gradient-text bg-gradient-to-r from-primary to-purple-600 dark:from-primary dark:to-purple-400">Baibhab Sahu</h1>
             <h3 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 dark:text-gray-300">Computer Science Engineering Student</h3>
-            <p className="text-lg max-w-2xl mx-auto md:mx-0 mb-8 text-muted-foreground dark:text-gray-300">
+            <p className="text-lg max-w-2xl mx-auto mb-8 text-muted-foreground dark:text-gray-300">
               I'm a passionate developer experienced in Android app development and machine learning projects. 
               Currently pursuing BTech in Computer Science at PMEC Berhampur.
             </p>
             
             {/* Social Links */}
-            <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <a 
                 href="mailto:baibhabsahu31@gmail.com"
                 className="p-3 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full hover:bg-primary/20 transition-colors dark:hover:bg-primary/20 hover:scale-110 transform-gpu duration-300"

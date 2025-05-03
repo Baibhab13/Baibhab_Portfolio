@@ -15,12 +15,8 @@ import TechBackground from '../components/TechBackground';
  * all the different sections. Each section is a separate component
  * for better organization and maintenance.
  * 
- * To customize this portfolio:
- * 1. Edit the content in each component (Hero.tsx, About.tsx, etc.)
- * 2. Update the profile image in Hero.tsx
- * 3. Change the project details in Projects.tsx
- * 4. Update contact information in Contact.tsx
- * 5. Customize colors in index.css and tailwind.config.ts
+ * The page includes an enhanced 3D background with Android mascot
+ * and machine learning visualizations.
  */
 const Index = () => {
   // Set page title when component mounts
@@ -31,9 +27,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative overflow-x-hidden">
       {/* Add subtle background pattern */}
-      <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
+      <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none"></div>
       
-      {/* 3D Tech Background */}
+      {/* Enhanced 3D Tech Background */}
       <TechBackground />
       
       {/* Main Content */}
