@@ -6,7 +6,6 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import TechBackground from '../components/TechBackground';
 
 /**
  * Main Portfolio Page
@@ -14,9 +13,6 @@ import TechBackground from '../components/TechBackground';
  * This is the main page of the portfolio website that combines
  * all the different sections. Each section is a separate component
  * for better organization and maintenance.
- * 
- * The page includes an enhanced 3D background with Android mascot
- * and machine learning visualizations.
  */
 const Index = () => {
   // Set page title when component mounts
@@ -28,9 +24,6 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative overflow-x-hidden">
       {/* Add subtle background pattern */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none"></div>
-      
-      {/* Enhanced 3D Tech Background */}
-      <TechBackground />
       
       {/* Main Content */}
       <div className="relative z-10">

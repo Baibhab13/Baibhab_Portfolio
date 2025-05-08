@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { ArrowDown, Mail, Github, Linkedin, Smartphone, Brain as BrainIcon, Cpu } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 /**
  * Hero section component
  * 
  * This component renders the main hero section with name, job title, 
- * and a brief introduction. The profile image has been removed in favor 
- * of the 3D visuals in the background.
+ * and a brief introduction with profile image.
  */
 const Hero = () => {
   // Scroll to the about section when the arrow is clicked
@@ -22,21 +22,14 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       <div className="container mx-auto px-6 py-12 md:py-24">
         <div className="flex flex-col items-center gap-8">
+          {/* Profile Image */}
+          <Avatar className="w-32 h-32 md:w-40 md:h-40 animate-fade-in shadow-xl border-2 border-primary/20">
+            <AvatarImage src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?q=80&w=800" alt="Baibhab Sahu" />
+            <AvatarFallback>BS</AvatarFallback>
+          </Avatar>
+          
           {/* Text Content */}
           <div className="w-full max-w-3xl text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            {/* Tech Icons */}
-            <div className="flex justify-center gap-6 mb-8">
-              <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-purple-400/20 backdrop-blur-sm animate-float">
-                <Smartphone size={32} className="text-primary" />
-              </div>
-              <div className="p-4 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "0.5s" }}>
-                <BrainIcon size={32} className="text-cyan-500" />
-              </div>
-              <div className="p-4 rounded-full bg-gradient-to-br from-emerald-500/20 to-green-400/20 backdrop-blur-sm animate-float" style={{ animationDelay: "1s" }}>
-                <Cpu size={32} className="text-emerald-500" />
-              </div>
-            </div>
-            
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground mb-3 dark:text-gray-300">Hello, I'm</h2>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-4 gradient-text bg-gradient-to-r from-primary to-purple-600 dark:from-primary dark:to-purple-400">Baibhab Sahu</h1>
             <h3 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 dark:text-gray-300">Computer Science Engineering Student</h3>
