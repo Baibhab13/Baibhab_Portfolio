@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 /**
  * Navigation component with responsive mobile menu
