@@ -79,14 +79,14 @@ const Projects = () => {
   ];
   
   return (
-    <section id="projects" className="py-12 md:py-20 bg-gradient-to-b from-purple-50/30 to-blue-50/30 backdrop-blur-sm dark:from-purple-900/20 dark:to-blue-900/20">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="section-title gradient-text text-2xl md:text-3xl mb-4 md:mb-6">My Projects</h2>
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mb-8 md:mb-12">
+    <section id="projects" className="py-10 sm:py-12 md:py-20 bg-gradient-to-b from-purple-50/30 to-blue-50/30 backdrop-blur-sm dark:from-purple-900/20 dark:to-blue-900/20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="section-title gradient-text text-2xl md:text-3xl mb-4 md:mb-6 pl-1">My Projects</h2>
+        <p className="text-base text-muted-foreground max-w-2xl mb-8 md:mb-10 pl-1">
           A collection of my recent work. Each project is unique and built with the goal of solving a specific problem.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id}
@@ -108,52 +108,52 @@ const Projects = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <h3 className="text-white text-lg md:text-xl font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
+                  <h3 className="text-white text-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
                 </div>
               </div>
               
-              <CardHeader className="flex flex-row items-center gap-2 p-4 md:p-5 pb-0">
-                <span className="p-2 rounded-md bg-primary/10 dark:bg-primary/20 shrink-0">
+              <CardHeader className="flex flex-row items-center gap-2 p-3 sm:p-4 pb-0">
+                <span className="p-1.5 sm:p-2 rounded-md bg-primary/10 dark:bg-primary/20 shrink-0">
                   {project.icon}
                 </span>
-                <h3 className="text-lg md:text-xl font-medium line-clamp-1">{project.title}</h3>
+                <h3 className="text-base sm:text-lg font-medium line-clamp-1">{project.title}</h3>
               </CardHeader>
               
-              <CardContent className="p-4 md:p-5 flex-grow">
-                <p className="text-muted-foreground mb-4 line-clamp-3 text-sm md:text-base">
+              <CardContent className="p-3 sm:p-4 flex-grow">
+                <p className="text-muted-foreground mb-3 line-clamp-3 text-xs sm:text-sm md:text-base">
                   {project.description}
                 </p>
                 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="bg-primary/5 text-primary/90 dark:bg-primary/10 dark:text-primary-foreground border-primary/20 text-xs md:text-sm">
+                    <Badge key={tagIndex} variant="outline" className="bg-primary/5 text-primary/90 dark:bg-primary/10 dark:text-primary-foreground border-primary/20 text-xs">
                       {tag}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
               
-              <CardFooter className="flex justify-between p-4 md:p-5 pt-0 gap-2 mt-auto">
+              <CardFooter className="flex justify-between p-3 sm:p-4 pt-0 gap-2 mt-auto">
                 <Button
                   variant="outline"
-                  size={isMobile ? "sm" : "sm"}
-                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs md:text-sm"
+                  size="sm"
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs"
                   asChild
                 >
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={isMobile ? 14 : 16} className="mr-1" />
+                    <ExternalLink size={14} className="mr-1" />
                     Demo
                   </a>
                 </Button>
                 <Button 
                   variant="outline" 
-                  size={isMobile ? "sm" : "sm"}
-                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs md:text-sm"
+                  size="sm"
+                  className="transition-all duration-300 group-hover:border-primary group-hover:text-primary flex-1 text-xs"
                   asChild
                 >
                   <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                    <Code size={isMobile ? 14 : 16} className="mr-1" />
+                    <Code size={14} className="mr-1" />
                     Code
                   </a>
                 </Button>

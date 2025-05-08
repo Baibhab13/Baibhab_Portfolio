@@ -21,12 +21,12 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950 dark:text-gray-100 relative overflow-x-hidden w-full">
       {/* Add subtle background pattern */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none"></div>
       
       {/* Main Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <Navbar />
         <Hero />
         <About />
