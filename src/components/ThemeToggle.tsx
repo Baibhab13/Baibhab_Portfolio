@@ -1,13 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { Switch } from '@/components/ui/switch';
+import { Switch } from './ui/switch';
 
-/**
- * Theme Toggle Component
- * 
- * This component provides a switch to toggle between light and dark modes.
- */
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
