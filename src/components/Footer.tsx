@@ -39,7 +39,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com/in/Baibhab07"
+              href="https://www.linkedin.com/in/baibhabsahu07"
               className="text-primary-foreground/80 hover:text-primary-foreground transition-colors dark:text-gray-300 dark:hover:text-white hover:scale-110 transition-transform"
               aria-label="LinkedIn"
               title="LinkedIn"

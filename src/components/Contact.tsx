@@ -23,7 +23,7 @@ const Contact = () => {
     {
       name: "LinkedIn",
       icon: <Linkedin size={18} className="sm:size-20" />,
-      link: "https://linkedin.com/in/Baibhab07",
+      link: "https://www.linkedin.com/in/baibhabsahu07",
     },
   ];
   

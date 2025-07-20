@@ -59,7 +59,7 @@ const Hero = () => {
                 <Github size={18} className="sm:size-20" />
               </a>
               <a 
-                href="https://linkedin.com/in/Baibhab07"
+                href="https://www.linkedin.com/in/baibhabsahu07"
                 className="p-2 sm:p-3 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full hover:bg-primary/20 transition-colors dark:hover:bg-primary/20 hover:scale-110 transform-gpu duration-300"
                 aria-label="LinkedIn"
                 title="LinkedIn"
