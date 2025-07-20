@@ -72,13 +72,13 @@ const Navbar = () => {
           {/* Logo/Name */}
           <a 
             href="#home" 
-            className="text-xl font-serif font-medium cursor-pointer transition-colors hover:text-primary"
+            className="text-xl sm:text-2xl font-serif font-semibold cursor-pointer transition-colors hover:text-primary"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('home');
             }}
           >
-            <span className="gradient-text">Portfolio</span>
+            <span className="gradient-text bg-gradient-to-r from-primary to-purple-600 dark:from-primary dark:to-purple-400 bg-clip-text text-transparent">Baibhab Sahu</span>
           </a>
           
           {/* Desktop Navigation */}
