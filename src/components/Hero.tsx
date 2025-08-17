@@ -31,10 +31,10 @@ const Hero = () => {
           {/* Text Content */}
           <div className="w-full max-w-3xl text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <h2 className="text-base sm:text-lg md:text-xl font-medium text-muted-foreground mb-2 sm:mb-3 dark:text-gray-300">Hello, I'm</h2>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-3 md:mb-4 gradient-text bg-gradient-to-r from-primary to-purple-600 dark:from-primary dark:to-purple-400">Baibhab Sahu</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-3 md:mb-4 gradient-text bg-gradient-to-r from-primary to-purple-600 dark:from-primary dark:to-purple-400">Baibhab Sahu</h1>
             <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-muted-foreground mb-4 md:mb-6 dark:text-gray-300">Computer Science Engineering Student</h3>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mb-6 md:mb-8 text-muted-foreground dark:text-gray-300 px-4">
-              I'm a passionate developer experienced in Android app development and machine learning projects. 
+              I'm a passionate developer experienced in machine learning and web development projects. 
               Currently pursuing BTech in Computer Science at PMEC Berhampur.
             </p>
             
