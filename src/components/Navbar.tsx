@@ -43,24 +43,9 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false);
     
-    // Special handling for education and experience - they're tabs within about section
-    if (sectionId === 'education' || sectionId === 'experience') {
-      const aboutElement = document.getElementById('about');
-      if (aboutElement) {
-        aboutElement.scrollIntoView({ behavior: 'smooth' });
-        // Small delay to ensure scroll completes before triggering tab
-        setTimeout(() => {
-          const tabTrigger = document.querySelector(`[value="${sectionId}"]`) as HTMLElement;
-          if (tabTrigger) {
-            tabTrigger.click();
-          }
-        }, 500);
-      }
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
   
@@ -83,7 +68,7 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            {['home', 'about', 'education', 'experience', 'projects', 'contact'].map((item) => (
+            {['home', 'about', 'projects', 'contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -120,7 +105,7 @@ const Navbar = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 shadow-md">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
-              {['home', 'about', 'education', 'experience', 'projects', 'contact'].map((item) => (
+              {['home', 'about', 'projects', 'contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item}`}
