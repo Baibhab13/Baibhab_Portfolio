@@ -28,16 +28,6 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Attendance Tracker",
-      description: "A comprehensive attendance management system that allows institutions to track student attendance efficiently. Features include automated reports, attendance status visualization, and Excel export functionality.",
-      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80",
-      tags: ["JavaScript", "HTML", "CSS", "Frontend"],
-      demoLink: "#",
-      codeLink: "https://github.com/baibhav1314/Attendence-Tracker",
-      icon: <Calendar className="text-primary" />
-    },
-    {
-      id: 3,
       title: "Laptop Price Prediction",
       description: "Developed a user-friendly web app with Streamlit, allowing users to input laptop features and receive price predictions using an ML model trained on market data.",
       image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80",
