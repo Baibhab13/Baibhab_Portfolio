@@ -18,26 +18,6 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Farm 2 You",
-      description: "Developed an Android app using Jetpack Compose and Android Studio for SIII. The app connects farmers directly with markets, eliminating intermediaries. Features include an intuitive UI, smooth navigation, and an AI assistant for informed decision-making.",
-      image: "https://images.unsplash.com/photo-150093738664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
-      tags: ["Android", "Jetpack Compose", "AI", "Kotlin"],
-      demoLink: "#",
-      codeLink: "#",
-      icon: <Layers className="text-primary" />
-    },
-    {
-      id: 2,
-      title: "Todo App",
-      description: "A comprehensive Android todo application built with Jetpack Compose for the frontend and Room database for local data persistence. Features include add, edit, delete, and mark tasks as complete with a modern, responsive UI.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
-      tags: ["Android", "Jetpack Compose", "Room Database", "Kotlin"],
-      demoLink: "#",
-      codeLink: "https://github.com/baibhav1314/Todo",
-      icon: <CheckSquare className="text-primary" />
-    },
-    {
-      id: 3,
       title: "Resume Categorization",
       description: "Developed a system to automatically categorize resumes based on job descriptions using natural language processing and machine learning techniques, streamlining the HR recruitment process.",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
@@ -47,7 +27,7 @@ const Projects = () => {
       icon: <FileText className="text-primary" />
     },
     {
-      id: 4,
+      id: 2,
       title: "Attendance Tracker",
       description: "A comprehensive attendance management system that allows institutions to track student attendance efficiently. Features include automated reports, attendance status visualization, and Excel export functionality.",
       image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80",
@@ -57,17 +37,7 @@ const Projects = () => {
       icon: <Calendar className="text-primary" />
     },
     {
-      id: 5,
-      title: "FarmConnect",
-      description: "Created for the Project Innovation Contest ICDCIT 2025, this app enables secure transactions and contract farming. Built with Jetpack Compose and Android Studio, it provides fraud protection and an AI assistant.",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      tags: ["Android", "Jetpack Compose", "AI", "Security"],
-      demoLink: "#",
-      codeLink: "#",
-      icon: <Layers className="text-primary" />
-    },
-    {
-      id: 6,
+      id: 3,
       title: "Laptop Price Prediction",
       description: "Developed a user-friendly web app with Streamlit, allowing users to input laptop features and receive price predictions using an ML model trained on market data.",
       image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80",

@@ -13,7 +13,6 @@ const About = () => {
   const technicalSkills = [
     { name: "C", icon: <FileCode size={16} /> },
     { name: "Python", icon: <FileCode size={16} /> },
-    { name: "Kotlin", icon: <FileCode size={16} /> },
     { name: "Java", icon: <FileCode size={16} /> },
     { name: "Figma", icon: <Figma size={16} /> },
     { name: "HTML", icon: <Globe size={16} /> },
@@ -21,11 +20,6 @@ const About = () => {
     { name: "React", icon: <Code size={16} /> },
     { name: "Scikit-learn", icon: <Cpu size={16} /> },
     { name: "PyTorch", icon: <Cpu size={16} /> },
-    { name: "Dagger-Hilt", icon: <Code size={16} /> },
-    { name: "KSP", icon: <Code size={16} /> },
-    { name: "Koin", icon: <Code size={16} /> },
-    { name: "Firebase", icon: <Server size={16} /> },
-    { name: "Room", icon: <Database size={16} /> },
     { name: "Seaborn", icon: <Cpu size={16} /> },
     { name: "IntelliJ IDE", icon: <Code size={16} /> },
     { name: "PyCharm", icon: <Code size={16} /> }
