@@ -46,7 +46,7 @@ const Hero = () => {
                 aria-label="Email"
                 title="Email"
               >
-                <Mail size={18} className="sm:size-20" />
+                <Mail size={18} />
               </a>
               <a 
                 href="https://github.com/Baibhab13"
@@ -56,7 +56,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={18} className="sm:size-20" />
+                <Github size={18} />
               </a>
               <a 
                 href="https://www.linkedin.com/in/baibhabsahu07"
@@ -66,7 +66,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={18} className="sm:size-20" />
+                <Linkedin size={18} />
               </a>
             </div>
             
@@ -91,7 +91,7 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm p-2 rounded-full"
         onClick={scrollToAbout}
       >
-        <ArrowDown size={20} className="sm:size-24" />
+        <ArrowDown size={20} />
       </div>
     </section>
   );
